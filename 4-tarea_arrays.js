@@ -88,16 +88,13 @@ console.log(position); // -> [0, 2]
 // 6.1 Crea una función llamada `findMinMaxPages` que reciba un array de números (representando el número de páginas de libros).
 // La función debe devolver un array con dos posiciones: el índice del libro con menos páginas y el índice del libro con más páginas.
 function findMinMaxPages(books) {
-    let max = books[0]
-    let min = books[0]
-    for (i = 0; i < books.length; i++){
-        if (books[i] < min){
-            min = books[i];
-        } else {
-            max = books[i];
-        }
-    }
-    return [min, max];
+    const maximo = Math.max(...books);
+    const minimo = Math.min(...books);
+
+    const posicionesMaximo = books.indexOf(maximo);
+    const posicionesMinimo = books.indexOf(minimo);
+    
+    return [posicionesMinimo, posicionesMaximo];
     // Tu código aquí
 }
 
